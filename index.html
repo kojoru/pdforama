@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pdforama by kojoru</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Pdforama</h1>
+        <p>Awesome interface for viewing presentations (proof of concept)</p>
+
+        <p class="view"><a href="https://github.com/kojoru/pdforama">View the Project on GitHub <small>kojoru/pdforama</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/kojoru/pdforama/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/kojoru/pdforama/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/kojoru/pdforama">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="pdforama" class="anchor" href="#pdforama"><span class="octicon octicon-link"></span></a>PDForama</h1>
+
+<p>They say release early so here you are.</p>
+
+<p>This is a proof-of-concept for integrating two awesome js libraries: <a href="http://mozilla.github.io/pdf.js/">pdf.js</a> and <a href="http://fotorama.io">fotorama</a>. The result is an awesome interface for presentation viewing.</p>
+
+<p>I'll post a live example soon.</p>
+
+<p>Usage:</p>
+
+<pre><code>&lt;head&gt;
+    &lt;!-- jQuery --&gt;
+    &lt;script src="http://code.jquery.com/jquery-1.10.2.min.js"&gt;&lt;/script&gt;
+
+    &lt;!-- Fotorama --&gt;
+    &lt;link href="fotorama.css" rel="stylesheet"&gt;
+    &lt;script src="fotorama.js"&gt;&lt;/script&gt;
+
+    &lt;!-- pdf.js --&gt;
+    &lt;script src="pdf.js"&gt;&lt;/script&gt;
+
+    &lt;!-- pdforama --&gt;
+    &lt;script src="pdforama.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- Shoot --&gt;
+    &lt;div class="pdforama" data-pdf="cors2.pdf"&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+</code></pre>
+
+<p>Currently it only supports a default-sized fotorama window and is mostly unusable until the whole pdf is loaded. Told you it's only a proof of concept.</p>
+
+<p>The plans are huge:</p>
+
+<ul>
+<li>Allow any width and height (absolute and relative)</li>
+<li>Previews</li>
+<li>Progressive loading</li>
+<li>npm/bower module</li>
+<li>Manual initialization and API</li>
+<li>Use fotorama native loading to show unloaded pages</li>
+<li>Make links and other active pdf content work</li>
+<li>Cleaner code and tests</li>
+</ul><p>Please let me know what features you would like to see in the issues section.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/kojoru">kojoru</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

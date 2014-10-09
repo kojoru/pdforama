@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic fotorama</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+  <!-- Fotorama -->
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.2/fotorama.css" rel="stylesheet">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.2/fotorama.js"></script>
+
+  <!-- Please don't actually use this in production - I will delete it once there's a decent CDN for pdf.js -->
+  <script src="http://kojo.ru/temp/pdfjs/pdf.js"></script>
+
+  <script src="../../pdforama.js"></script>
+</head>
+
+<body>
+<p>Compare with <a href="../sample.pdf">original file</a>.</p>
+<!-- Pdforama -->
+<div class="pdforama" data-pdf="../sample.pdf">Loading...</div>
+</body>
+</html>

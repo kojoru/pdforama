@@ -3,7 +3,7 @@ They say release early so here you are.
 
 This is a proof-of-concept for integrating two awesome js libraries: [pdf.js](http://mozilla.github.io/pdf.js/) and [fotorama](http://fotorama.io). The result is an awesome interface for presentation viewing.
 
-I'll post a live example soon.
+See [live example](http://kojoru.github.io/pdforama/examples/simple/).
 
 Usage:
 

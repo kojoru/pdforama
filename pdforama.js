@@ -38,18 +38,12 @@ $(function () {
                         canvasContext: context,
                         viewport: viewport
                     };
-                    var pageRendering = page.render(renderContext);
-                    //Step : hook into the pdf render complete event
-                    var completeCallback = pageRendering.internalRenderTask.callback;
-                    pageRendering.internalRenderTask.callback = function (error) {
-                        //Step 2: what you want to do before calling the complete method  
-                        completeCallback.call(this, error);
-                        //Step 3: do some more stuff
+                    var pageRendering = page.render(renderContext).then(function(){
                         var dataURL = canvas.toDataURL("image/png");
                         pages[page.pageIndex] = dataURL;
                         addPages();
                         console.log('page ' + (page.pageIndex + 1) + ' ready!');
-                    };
+                    });
                 });
             }
         }

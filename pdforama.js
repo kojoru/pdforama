@@ -1,10 +1,17 @@
 'use strict';
 
 $(function () {
-    var fr, pdfPath;
+    var fr, pdfPath, pages = [], currentPage = 0;
     var $fotoramaDiv = $('.pdforama').fotorama({ data: [] });
     fr = $fotoramaDiv.data('fotorama');
     pdfPath = $fotoramaDiv.data('pdf');
+
+    var addPages = function () {
+        while (pages[currentPage + 1] !== undefined) {
+            fr.push({ img: pages[currentPage + 1], data: { id: currentPage + 1} });
+            currentPage++;
+        }
+    }
 
     PDFJS.getDocument(pdfPath).then(function (pdf) {
         if (pdf.numPages >= 1) {
@@ -38,13 +45,9 @@ $(function () {
                         //Step 2: what you want to do before calling the complete method  
                         completeCallback.call(this, error);
                         //Step 3: do some more stuff
-                        var page2 = canvas.toDataURL("image/png");
-                        fr.push({ img: page2, data: { id: page.pageIndex} });
-                        fr.sort(function (frameA, frameB) {
-                            if (frameA.data.id > frameB.data.id) return 1;
-                            if (frameA.data.id < frameB.data.id) return -1;
-                            return 0;
-                        });
+                        var dataURL = canvas.toDataURL("image/png");
+                        pages[page.pageIndex] = dataURL;
+                        addPages();
                         console.log('page ' + (page.pageIndex + 1) + ' ready!');
                     };
                 });
